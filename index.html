@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduChat Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+    <div id="screenshotOverlay" class="ss-overlay hidden">
+        <div class="ss-content">
+            <i class="fas fa-user-secret"></i>
+            <h2>SECURITY ALERT</h2>
+            <p>Screenshot activity detected and reported.</p>
+        </div>
+    </div>
+
+    <section id="authPage" class="auth-container">
+        <div class="login-card-3d">
+            <div class="logo-area">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>EduChat <span>PRO</span></h1>
+            </div>
+            <form id="loginForm">
+                <div class="input-3d-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="email" id="email" required placeholder="Email Address">
+                </div>
+                <div class="input-3d-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" required placeholder="Password">
+                </div>
+                <button type="submit" class="btn-login-pro">UNLOCK ACCESS</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="chatPage" class="chat-container hidden">
+        <header class="chat-header-pro">
+            <div class="header-left">
+                <div class="avatar-pro"><i class="fas fa-user"></i></div>
+                <div class="user-meta">
+                    <h3 id="welcomeUser">Welcome</h3>
+                    <div id="statusIndicator" class="status-pro">
+                        <span class="pulse-dot"></span>
+                        <span id="userStatus">Connecting...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="e2ee-badge"><i class="fas fa-clock"></i> 24h Auto-Delete</div>
+                <button id="logoutBtn" class="btn-exit"><i class="fas fa-power-off"></i></button>
+            </div>
+        </header>
+
+        <main class="chat-viewport" id="chatBox"></main>
+        <div id="videoContainer" class="video-call-overlay hidden">
+    <video id="remoteVideo" autoplay playsinline class="remote-video"></video>
+    <video id="localVideo" autoplay muted playsinline class="local-video"></video>
+    <div class="call-controls">
+        <button id="endCallBtn" class="btn-end-call"><i class="fas fa-phone-slash"></i></button>
+    </div>
+</div>
+
+        <div id="typingIndicator" class="typing-pro hidden">
+            <span id="typingText">Someone is typing</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+        </div>
+
+        <footer class="chat-footer-pro">
+            <div class="pro-tools">
+                <input type="file" id="fileInput" class="hidden" accept="image/*">
+                <button id="attachBtn" class="tool-btn"><i class="fas fa-paperclip"></i></button>
+                <button class="tool-btn"><i class="fas fa-video"></i></button>
+                <button class="tool-btn"><i class="fas fa-phone"></i></button>
+            </div>
+            <div class="input-wrapper-pro">
+                <input type="text" id="messageInput" placeholder="Write securely..." autocomplete="off">
+                <button id="sendBtn" class="btn-send-pro"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
