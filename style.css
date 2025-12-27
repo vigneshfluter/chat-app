@@ -102,30 +102,33 @@ body { background: var(--bg-dark); color: white; height: 100vh; overflow: hidden
     font-size: 1.5rem; box-shadow: 0 0 20px rgba(255,68,68,0.5);
 }
 /* For mobile view */
+/* For mobile view */
 @media (max-width: 768px) {
-    /* Make sure the body or the chat container has enough space for the footer */
-    body, .chat-container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh; /* Take full height */
-    }
-
-    /* Ensure the chat content takes most of the space, leaving space for the footer */
-    .chat-content {
-        flex-grow: 1; /* Makes this section flexible */
-        overflow-y: auto; /* Allow scrolling if content overflows */
-    }
-
-    /* Footer settings */
     .chat-footer-pro {
-        position: relative; /* Footer will stay in place but can scroll with the content */
+        position: relative;
         padding: 10px;
-        background-color: rgba(0, 0, 0, 0.8); /* You can adjust the background */
-        color: white; /* Change text color to make it readable */
+        background-color: rgba(0, 0, 0, 0.8);
         width: 100%;
-        margin-top: auto; /* Push the footer to the bottom */
+        margin-top: auto;
         z-index: 9999;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Optional shadow */
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Adjust the input area */
+    #chatInput {
+        width: 100%; /* Ensure the input takes full width */
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #333;
+        color: white;
+        font-size: 16px;
+    }
+
+    /* Placeholder style */
+    #chatInput::placeholder {
+        color: #aaa; /* Lighter color for the placeholder text */
+        font-style: italic;
     }
 }
 
