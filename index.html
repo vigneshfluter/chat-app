@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 </head>
 <body>
 
@@ -59,13 +59,14 @@
         </header>
 
         <main class="chat-viewport" id="chatBox"></main>
+        
         <div id="videoContainer" class="video-call-overlay hidden">
-    <video id="remoteVideo" autoplay playsinline class="remote-video"></video>
-    <video id="localVideo" autoplay muted playsinline class="local-video"></video>
-    <div class="call-controls">
-        <button id="endCallBtn" class="btn-end-call"><i class="fas fa-phone-slash"></i></button>
-    </div>
-</div>
+            <video id="remoteVideo" autoplay playsinline class="remote-video"></video>
+            <video id="localVideo" autoplay muted playsinline class="local-video"></video>
+            <div class="call-controls">
+                <button id="endCallBtn" class="btn-end-call"><i class="fas fa-phone-slash"></i></button>
+            </div>
+        </div>
 
         <div id="typingIndicator" class="typing-pro hidden">
             <span id="typingText">Someone is typing</span>
