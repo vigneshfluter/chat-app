@@ -228,6 +228,7 @@ document.querySelector('.fa-video').parentElement.onclick = () => startCall(true
 document.querySelector('.fa-phone').parentElement.onclick = () => startCall(false);
 document.getElementById('endCallBtn').onclick = () => location.reload();
 
+// --- TYPING STATUS LOGIC ADDED HERE ---
 msgInput.oninput = () => { db.ref(`typing/${me.replace(/\./g, '_')}`).set(Date.now()); };
 setInterval(() => {
     const other = Object.keys(ACCOUNTS).find(e => e !== me);
@@ -241,6 +242,7 @@ setInterval(() => {
         } else { indicator.classList.add('hidden'); }
     });
 }, 1000);
+// --------------------------------------
 
 document.getElementById('attachBtn').onclick = () => document.getElementById('fileInput').click();
 document.getElementById('fileInput').onchange = (e) => {
